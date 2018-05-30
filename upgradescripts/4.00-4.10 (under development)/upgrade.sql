@@ -2886,6 +2886,6 @@ GO
 IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'captchasettings.isallowedautomaticallychooselanguage')
 BEGIN
 	INSERT [Setting] ([Name], [Value], [StoreId])
-	VALUES (N'captchasettings.isallowedautomaticallychooselanguage', N'False', 0)
+	VALUES (N'captchasettings.isallowedautomaticallychooselanguage', N'True', 0)
 END
 GO

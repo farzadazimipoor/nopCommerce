@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Nop.Core;
+using Nop.Core.Domain.Security;
 using Nop.Core.Infrastructure;
 
 namespace Nop.Web.Framework.Security.Captcha

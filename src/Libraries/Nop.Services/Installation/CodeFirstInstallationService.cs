@@ -6555,6 +6555,12 @@ namespace Nop.Services.Installation
                 DisplayWishlistFooterItem = true,
                 DisplayApplyVendorAccountFooterItem = true
             });
+
+            settingService.SaveSetting(new CaptchaSettings
+            {
+                ReCaptchaDefaultLanguage = "",
+                IsAllowedAutomaticallyChooseLanguage = true
+            });
         }
 
         protected virtual void InstallCheckoutAttributes()

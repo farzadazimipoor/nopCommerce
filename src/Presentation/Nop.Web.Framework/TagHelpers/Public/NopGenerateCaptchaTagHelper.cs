@@ -13,7 +13,6 @@ namespace Nop.Web.Framework.TagHelpers.Public
     public class NopGenerateCaptchaTagHelper : TagHelper
     {
         private readonly IHtmlHelper _htmlHelper;
-        private readonly CaptchaSettings _captchaSettings;
 
         /// <summary>
         /// ViewContext
@@ -26,11 +25,9 @@ namespace Nop.Web.Framework.TagHelpers.Public
         /// Ctor
         /// </summary>
         /// <param name="htmlHelper">HTML helper</param>
-        /// <param name="captchaSettings">Captcha settings</param>
-        public NopGenerateCaptchaTagHelper(IHtmlHelper htmlHelper, CaptchaSettings captchaSettings)
+        public NopGenerateCaptchaTagHelper(IHtmlHelper htmlHelper)
         {
             _htmlHelper = htmlHelper;
-            _captchaSettings = captchaSettings;
         }
 
         /// <summary>
