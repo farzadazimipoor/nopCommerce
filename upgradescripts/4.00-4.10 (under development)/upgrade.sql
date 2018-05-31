@@ -2902,7 +2902,8 @@ GO
  --new table
 IF NOT EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PictureBinary]') and OBJECTPROPERTY(object_id, N'IsUserTable') = 1)
 BEGIN
-	CREATE TABLE [dbo].[PictureBinary]
+
+EXEC('CREATE TABLE [dbo].[PictureBinary]
     (
 		[Id] int IDENTITY(1,1) NOT NULL,
 		[PictureId] int NOT NULL,
@@ -2913,11 +2914,11 @@ BEGIN
 		) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON)
 	)
 
-	--copy existing data
+   --copy existing data
 	INSERT INTO [dbo].[PictureBinary](PictureId, BinaryData)
 	SELECT [Id], [PictureBinary] FROM [dbo].[Picture]
 
-	ALTER TABLE dbo.Picture	DROP COLUMN [PictureBinary]
+	ALTER TABLE dbo.Picture	DROP COLUMN [PictureBinary]')	
 
 END
 GO
